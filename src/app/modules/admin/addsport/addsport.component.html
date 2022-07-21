@@ -1,0 +1,42 @@
+<pre></pre>
+<div class="col-md-6 offset-md-3 mt-5 pers">
+    <div class="row justify-content-center h-50 ">
+        <div class="card my-auto shadow box">
+            <div class="card-body p-5">
+                <div class="text-center">
+                    <h2>Please enter the sport information</h2>
+                </div>
+                <br>
+                <form [formGroup]="reactiveForm" (ngSubmit)="submit()">
+                    <div class="form-group">
+                        <label >
+                            <h5>category Name</h5>
+                        </label>
+                        <input type="name" class="form-control" name="name"
+                            formControlName='categoryname'>
+                    </div>
+                    <div class="form-group">
+                        <label >
+                            <h5>Id</h5>
+                        </label>
+                        <input type="name" class="form-control" name="name"
+                            formControlName='id'>
+                    </div>
+                    <div class="form-group">
+                        <label >
+                            <h5>Image</h5>
+                        </label>
+                        <input type="name" class="form-control" name="name"
+                            formControlName='image'>
+                    </div>
+                    
+                 
+
+                    <button type="submit" class="btn btn_pers w-100">Add</button>
+                    <pre></pre>
+                    <button (click)="delete()" class="btn btn_pers w-100">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

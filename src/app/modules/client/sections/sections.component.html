@@ -1,0 +1,80 @@
+<section class="py-5">
+    <div class="text-center">
+        <h1> The sports currently available:</h1>
+    </div><br>
+    <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+        <div class="col-sm-4 justify-content-center" *ngFor="let sport of manag.SportList">
+            <div class="card h-100 justify-content-center card-bg">
+                <h2 class="card-title text-center">{{sport.name}}</h2>
+                <div class="text-center card-size ">
+                    <img [src]="sport.image" class="oversize ">
+                </div>
+            </div>
+            <div class="card-footer"><button class="btn btn_pers btn-sm" (click)="goto(sport.id)">See events</button></div>
+
+        </div>
+    </div>
+    <pre></pre>
+</section>
+<div class="alert alert-warning" *ngIf="manag.errorMessage !=''">
+    <p>{{manag.errorMessage}}</p>
+</div>
+<pre></pre>
+<section *ngIf="clicked">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center mb-5">
+                <h2 class="heading-section">The events available for {{A.name}}</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-wrap">
+                    <table class="table">
+                        <thead class="btn_pers">
+                            <tr>
+                                <th>ID no.</th>
+                                <th>Event Name</th>
+                                <th>Event place</th>
+                                <th>Event Details</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                                <th>Price</th>
+                                <th>Number of palces availables</th>
+                                <th>Participants</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngIf="manag.AllEvents.length<1 && !manag.isfetching">
+                                <td colspan="7"> No event available</td>
+                            </tr>
+                            <tr *ngIf="manag.errorMessage !='' ">
+                                <td colspan="7" class="alert alert-warning"> {{manag.errorMessage}}</td>
+                            </tr>
+                            <tr *ngIf="manag.isfetching && manag.errorMessage ==='' ">
+                                <td colspan="7"> Loading...</td>
+                            </tr>
+                            <tr *ngFor="let a of manag.AllEvents; index as i">
+                                <th scope="row">{{i+1}}</th>
+                                <td> {{a.name}}</td>
+                                <td>{{a.place}}</td>
+                                <td>{{a.desc}}</td>
+                                <td>{{a.start_date}}</td>
+                                <td>{{a.end_date}}</td>
+                                <td>{{a.price}}</td>
+                                <td><a *ngFor="let player in a.players">{{player.firstname}}</a></td>
+                                <td class="text-center">{{a.max_num}}</td>
+                                <td><button *ngIf="a.max_num>a.players.length" class="btn btn_pers btn-sm" (click)="Join(a.id)">Join
+                                        Event</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div *ngIf="joined" class="text-center c-1">
+    <h3>Thank you for joining our event </h3>
+</div>

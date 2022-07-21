@@ -1,0 +1,71 @@
+<pre></pre>
+<div class="col-md-6 offset-md-3 mt-5 pers">
+    <div class="row justify-content-center h-50 ">
+        <div class="card my-auto shadow box">
+            <div class="card-body p-5">
+                <div class="text-center">
+                    <h2>Please enter your information</h2>
+                </div>
+                <br>
+                <form [formGroup]="reactiveForm" (ngSubmit)="submit()">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="exampleInputFirstName">
+                                    <h5>FirstName</h5>
+                                </label>
+                                <input type="firstname" class="form-control" name="firstname"
+                                    formControlName='firstname'>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="exampleInputLastName">
+                                    <h5>LastName</h5>
+                                </label>
+                                <input type="lastname" class="form-control" name="lastname" formControlName='lastname'>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">
+                            <h5>Email address</h5>
+                        </label>
+                        <input type="email" class="form-control" name="email" formControlName='email'>
+                        <small *ngIf="!reactiveForm.get('email').valid && reactiveForm.get('email').touched">You need to
+                            enter your professional Email</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputusername">
+                            <h5>UserID</h5>
+                        </label>
+                        <input type="usernID" class="form-control" name="userID" formControlName='userID'>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">
+                            <h5>Password</h5>
+                        </label>
+                        <input type="password" class="form-control" name="password" formControlName='password'>
+                        <small *ngIf="!reactiveForm.get('password').valid && reactiveForm.get('password').touched">The
+                            minimum length must be 8</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPhone">
+                            <h5>Phone Number</h5>
+                        </label>
+                        <input type="phone" class="form-control" name="phone" formControlName='phone' >
+                        <small *ngIf="!reactiveForm.get('phone').valid && reactiveForm.get('phone').touched">this phone is invalid</small>
+                    </div>
+                    
+
+                    <button type="submit" class="btn btn_pers w-100">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<pre></pre>
+<pre></pre>

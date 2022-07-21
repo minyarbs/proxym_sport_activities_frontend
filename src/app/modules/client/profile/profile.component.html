@@ -1,0 +1,43 @@
+<pre>
+
+
+
+</pre>
+<section class="section about-section gray-bg" id="about">
+    <div class="container">
+        <div class="row align-items-center flex-row-reverse">
+            <div class="col-lg-6">
+                <div class="about-text go-to">
+                    <h1 class="dark-color">About Me</h1>
+                    <h2 class="theme-color lead">{{currentUser.firstname}} {{currentUser.lastname}}</h2>
+                    <div class="row about-list">
+                        <div class="col-md-6">
+                            <div class="media">
+                                <label>Proxym_Id: </label>
+                                <p>{{currentUser.userID}}</p>
+                            </div>
+                            <div class="media">
+                                <label>E-mail: </label>
+                                <p>{{currentUser.email}}</p>
+                            </div>
+                            <div class="media">
+                                <label>phone number: </label>
+                                <p>{{currentUser.PhoneNumber}}</p>
+                            </div>
+                            <div class="media">
+                                <button class="btn btn_pers"(click)="clicked()">Edit Profile</button>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="about-avatar">
+                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" title="" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

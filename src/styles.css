@@ -1,1 +1,47 @@
-/* You can add global styles to this file, and also import other style files */
+
+.bg{
+   
+    background-image: url('src/assets/2.jpg') ;
+    background-size: cover;
+    min-height: 520px;
+    text-align: center;
+    padding-top: 240px;
+
+}
+.crd{
+    color: white;
+}
+body{
+    background-color: #f6fff8;
+}
+.oversize {
+    width: 80%;
+    height: 100%;
+}
+.btn_pers{
+    background-color: #358f80;
+    color: white;
+}
+
+h2{
+    color: #036666;
+  
+}
+h1{
+    color: #f9844a;
+    font-style: italic;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.box{
+    background-color: #eaf4f486;
+   
+    font-style: italic;
+    
+}
+.card-bg{
+    background-color: #eaf4f486;
+}
+
+.card-size{
+    height: 70%;
+}
